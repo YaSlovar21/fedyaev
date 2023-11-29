@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link href="<%= canonicalURL %>"  rel="canonical" />
+</head>
+<body class="page ">
+  <%= require('html-loader!./inner-metrika.html').default %>
+
+  <main>
+
+  </main>
+  <footer class="mx-auto max-w-7xl px-6 mt-24 w-full sm:mt-32 lg:mt-40">
+    <div class="mx-auto max-w-none">
+      <div style="opacity: 1; transform: none;">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+          <nav>
+            <ul role="list" class="grid grid-cols-2 gap-8 sm:grid-cols-1">
+              <li>
+                <h3 class="font-display text-sm font-semibold tracking-wider text-slate-200">Work</h3>
+                <ul role="list" class="mt-4 text-sm text-neutral-700">
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/work/family-fund">FamilyFund</a>
+                  </li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/work/unseal">Unseal</a></li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/work/phobia">Phobia</a></li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/work">See all <span
+                        aria-hidden="true">→</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="font-display text-sm font-semibold tracking-wider text-slate-200">Company</h3>
+                <ul role="list" class="mt-4 text-sm text-neutral-700">
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/about">About</a></li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/process">Process</a></li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/blog">Blog</a></li>
+                  <li class="mt-4"><a class="transition hover:text-slate-200" href="/contact">Contact us</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>
