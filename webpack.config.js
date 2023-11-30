@@ -2,7 +2,7 @@ const path = require('path'); // подключаем path к конфигу в�
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
-const {bpages} = require('./bpages');
+//const {bpages} = require('./bpages');
 
 
 const canonicalURL = 'https://www.kupcov.com'
@@ -31,7 +31,8 @@ function generateArticleHtmlPlugins() {
 
 module.exports = {
   entry: { 
-    index: './src/kpages/index.js', 
+    index: './src/pages/index.js', 
+    all: './src/pages/all.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -105,10 +106,18 @@ module.exports = {
       template: './src/index.html', // путь к файлу index.html
       chunks: ['index', 'all'],
     }),
-    
+    new HtmlWebpackPlugin({
+      templateParameters: {
+        canonicalURL,
+      },
+      title: "Типографика проекта",
+      template: './src/prose.html', // путь к файлу index.html
+      filename: 'typography/index.html',
+      chunks: ['index', 'all'],
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     })
-  ].concat(htmlArticlePlugins), 
+  ].concat(), 
 }
