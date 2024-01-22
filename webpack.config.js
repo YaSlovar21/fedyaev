@@ -106,6 +106,7 @@ module.exports = {
       template: './src/index.html', // путь к файлу index.html
       chunks: ['index', 'all'],
     }),
+    
     new HtmlWebpackPlugin({
       templateParameters: {
         canonicalURL,

@@ -33,6 +33,11 @@ module.exports = {
           dark: '#B72F0B',
           darker: '#901E00',
         },
+        indigo: {
+          500: '#1C7ED5',
+          600: '#235BD8',
+          700: '#2B34DB'
+        },
       }
     },
     
